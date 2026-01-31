@@ -1,0 +1,11 @@
+[project]
+name = "pcs-check"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pyinstaller>=6.17.0",
+    "pyqtgraph>=0.13.7",
+    "pyside6>=6.10.1",
+]
