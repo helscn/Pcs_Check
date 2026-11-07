@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'MeasImage.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.1
+## Created by: Qt User Interface Compiler version 6.10.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -19,6 +19,8 @@ from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QGridLayout,
     QHBoxLayout, QLabel, QSizePolicy, QVBoxLayout,
     QWidget)
 
+from lib.imageview import ZoomImageView
+
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
@@ -30,8 +32,8 @@ class Ui_Dialog(object):
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.line_2 = QFrame(Dialog)
         self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.HLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
+        self.line_2.setFrameShape(QFrame.Shape.HLine)
+        self.line_2.setFrameShadow(QFrame.Shadow.Sunken)
 
         self.verticalLayout_3.addWidget(self.line_2)
 
@@ -56,19 +58,17 @@ class Ui_Dialog(object):
 
         self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.imgCS = QLabel(Dialog)
+        self.imgCS = ZoomImageView(Dialog)
         self.imgCS.setObjectName(u"imgCS")
-        self.imgCS.setMinimumSize(QSize(300, 300))
+        self.imgCS.setMinimumSize(QSize(200, 200))
         self.imgCS.setFrameShape(QFrame.Box)
-        self.imgCS.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.imgCS, 3, 0, 1, 1)
 
-        self.imgSS = QLabel(Dialog)
+        self.imgSS = ZoomImageView(Dialog)
         self.imgSS.setObjectName(u"imgSS")
-        self.imgSS.setMinimumSize(QSize(300, 300))
+        self.imgSS.setMinimumSize(QSize(200, 200))
         self.imgSS.setFrameShape(QFrame.Box)
-        self.imgSS.setAlignment(Qt.AlignCenter)
 
         self.gridLayout.addWidget(self.imgSS, 3, 1, 1, 1)
 
@@ -103,8 +103,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.lblTitle.setText(QCoreApplication.translate("Dialog", u"\u677f\u539a\u56fe\u7247", None))
         self.lblComment.setText("")
-        self.imgCS.setText("")
-        self.imgSS.setText("")
         self.label_5.setText(QCoreApplication.translate("Dialog", u"\u6b63\u9762", None))
         self.label_6.setText(QCoreApplication.translate("Dialog", u"\u53cd\u9762", None))
     # retranslateUi

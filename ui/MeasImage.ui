@@ -67,40 +67,28 @@
      <item>
       <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0,0">
        <item row="3" column="0">
-        <widget class="QLabel" name="imgCS">
+        <widget class="ZoomImageView" name="imgCS">
          <property name="minimumSize">
           <size>
-           <width>300</width>
-           <height>300</height>
+           <width>200</width>
+           <height>200</height>
           </size>
          </property>
          <property name="frameShape">
           <enum>QFrame::Box</enum>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLabel" name="imgSS">
+        <widget class="ZoomImageView" name="imgSS">
          <property name="minimumSize">
           <size>
-           <width>300</width>
-           <height>300</height>
+           <width>200</width>
+           <height>200</height>
           </size>
          </property>
          <property name="frameShape">
           <enum>QFrame::Box</enum>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -142,6 +130,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ZoomImageView</class>
+   <extends>QGraphicsView</extends>
+   <header>lib.imageview</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
