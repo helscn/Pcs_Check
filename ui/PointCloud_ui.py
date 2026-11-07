@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(858, 825)
+        MainWindow.resize(964, 825)
         icon = QIcon()
         icon.addFile(u":/icon.ico", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -62,10 +62,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.barCode)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer)
-
         self.label_2 = QLabel(self.centralwidget)
         self.label_2.setObjectName(u"label_2")
 
@@ -77,11 +73,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.fileSelect)
 
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
         self.showPlot = QPushButton(self.centralwidget)
         self.showPlot.setObjectName(u"showPlot")
         self.showPlot.setMinimumSize(QSize(100, 40))
 
         self.horizontalLayout_2.addWidget(self.showPlot)
+
+        self.pushButton = QPushButton(self.centralwidget)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(100, 40))
+
+        self.horizontalLayout_2.addWidget(self.pushButton)
 
 
         self.verticalLayout.addLayout(self.horizontalLayout_2)
@@ -112,5 +118,6 @@ class Ui_MainWindow(object):
         self.barCode.setText("")
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"\u6570\u636e\u6587\u4ef6\uff1a", None))
         self.showPlot.setText(QCoreApplication.translate("MainWindow", u"\u663e\u793a\u70b9\u4e91\u56fe", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u663e\u793a\u677f\u539a\u56fe", None))
     # retranslateUi
 
