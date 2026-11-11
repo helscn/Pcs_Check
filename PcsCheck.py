@@ -202,7 +202,7 @@ class PointCloudWindow(QMainWindow):
                 QMessageBox.critical(self, "配置文件错误", f"无法读取配置文件:\n{e}")
         else:
             try:
-                with open("config.json", "w") as f:
+                with open("config.json", "w", encoding="utf-8") as f:
                     json.dump(self.config, f, indent=4)
             except Exception as e:
                 QMessageBox.critical(self, "配置文件错误", f"无法创建配置文件:\n{e}")
