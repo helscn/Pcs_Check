@@ -10,8 +10,10 @@ import resources_rc
 import pyqtgraph as pg
 import numpy as np
 import math
+import json
 import re
 import os
+import sys
 
 
 class Point(object):
@@ -189,9 +191,22 @@ class PointCloudWindow(QMainWindow):
     def load_config(self):
         self.config = {
             "srcData": "\\\\172.29.230.15\\ProdData01\\测厚仪数据\\P2D测厚仪数据",
-            "srcImage": "\\\\172.21.244.15\\p2dpcs\\PCBImages\\HeightImage",
+            "srcImage": "\\\\172.29.230.15\\ProdData01\\BRBL_PCS\\P2D\\PCBImages\\HeightImage",
             "colorMap": "CET-R2"
         }
+        if os.path.isfile("config.json"):
+            try:
+                with open("config.json", "r") as f:
+                    self.config.update(json.load(f))
+            except Exception as e:
+                QMessageBox.critical(self, "配置文件错误", f"无法读取配置文件:\n{e}")
+        else:
+            try:
+                with open("config.json", "w") as f:
+                    json.dump(self.config, f, indent=4)
+            except Exception as e:
+                QMessageBox.critical(self, "配置文件错误", f"无法创建配置文件:\n{e}")
+
 
     def init_file_select(self):
         # 原来的下拉框升级为可复选：可同时勾选多个数据文件
